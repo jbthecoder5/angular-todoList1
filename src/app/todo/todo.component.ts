@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Todo } from '../models/Todo';
 
 @Component({
   selector: 'app-todo',
@@ -6,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo.component.css'],
 })
 export class TodoComponent implements OnInit {
-  todo = [];
+  todos!: Todo[];
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.todos = [
+      {
+        content: 'first content',
+        completed: true,
+      },
+      {
+        content: 'second content',
+        completed: true,
+      },
+    ];
+  }
 }
